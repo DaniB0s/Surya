@@ -1,129 +1,265 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
+#conversation tool by xD Surya
+from platform import system
+import sys
+def testPY():
+    if(sys.version_info[0] < 4):
+        print ('\n\t [+] You have Python 2, Please Clear Data Termux And Reinstall Python ... \n')
+        sys.exit()
 
-# C extensions
-*.so
+###----------[ SURYA COLOR STYLE ]---------- ###
+Z = "\x1b[0;90m"     # Hitam
+M = "\x1b[38;5;196m" # Merah
+H = "\x1b[38;5;46m"  # Hijau
+K = "\x1b[38;5;226m" # Kuning
+B = "\x1b[38;5;44m"  # Biru
+U = "\x1b[0;95m"     # Ungu
+O = "\x1b[0;96m"     # Biru Muda
+P = "\x1b[38;5;231m" # Putih
+HJ = "\x1b[38;5;208m" # Jingga
+A = "\x1b[38;5;248m" # Abu-Abu
 
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-pip-wheel-metadata/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
+##
+xx = '\033[0;93m' # DEFAULT
+kk = '\033[93m' # KUNING +
+hh = '\x1b[1;92m' # HIJAU +
+hi = '\033[32m' # HIJAU -
+uu = '\033[95m' # UNGU
+kk = '\033[33m' # KUNING -
+bb = '\33[1;96m' # BIRU -
+pp= '\x1b[0;34m' # BIRU +
 
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
+Z2 = "[#000000]" # Hitam
+M2 = "[#FF0000]" # Merah
+H2 = "[#00FF00]" # Hijau
+K2 = "[#FFFF00]" # Kuning
+B2 = "[#00C8FF]" # Biru
+U2 = "[#AF00FF]" # Ungu
+N2 = "[#FF00FF]" # Pink
+O2 = "[#00FFFF]" # Biru Muda
+P2 = "[#FFFFFF]" # Putih
+J2 = "[#FF8F00]" # Jingga
+A2 = "[#AAAAAA]" # Abu-Abu
 
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
+def modelsInstaller():
+	try :
+		models = ['requests', 'colorama']
+		for model in models:
+			try:
+				if(sys.version_info[0] < 3):
+					os.system('cd C:\Python27\Scripts & pip install {}'.format(model))
+				else :
+					os.system('python -m pip install {}'.format(model))
+				print (' ')
+				print (' [+] {} has been installed successfully, Restart the program.'.format(model))
+				sys.exit()
+				print (' ')
+			except:
+				print (' [-] Install {} manually.'.format(model))
+				print (' ')
+	except:
+		pass
 
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-.pytest_cache/
+import base64
+import json
+import time
+import sys,os,re,binascii,time,json,random,threading,pprint,smtplib,telnetlib,os.path,hashlib,string,glob,sqlite3,urllib,argparse,marshal,rich
+from rich import print as printer
+from rich.panel import Panel
+from platform import system
+from datetime import datetime
 
-# Translations
-*.mo
-*.pot
+try :
+	import requests
+	from colorama import Fore
+	from colorama import init
+except :
+	modelsInstaller()
 
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
+requests.packages.urllib3.disable_warnings()
 
-# Flask stuff:
-instance/
-.webassets-cache
+def cls():
+	if system() == 'Linux':
+		os.system('clear')
+	else:
+		if system() == 'Windows':
+			os.system('cls')
+cls()
+CLEAR_SCREEN = '\033[2J'
+RED = '\033[31m'   # mode 31 = red forground
+RESET = '\033[0m'  # mode 0  = reset
+BLUE  = "\033[34m"
+WHITE = "\u001b[37m",
+YELLOW = "\u001b[33;1m",
+CYAN  = "\033[36m"
+MAGENTA = "\u001b[35m",
+GREEN = "\033[32m"
+RESET = "\033[0m"
+BOLD = '\033[1m'
+REVERSE = "\033[m"
+def logo():
+		clear = "\x1b[0m"
+		colors = [35,33,36 ]
 
-# Scrapy stuff:
-.scrapy
+		x = """
+\033[1;93m---------------------------> VERSION 3.0 <----------------------------------
+\033[1;98m____________________________________________________________________________
+\033[1;97m|    ______                                                                |
+\033[1;93m|   /      \                                                               |
+\033[1;91m|  |  $$$$$$\ __    __   ______   __    __   ______          x             |
+\033[1;92m|  | $$___\$$|  \  |  \ /      \ |  \  |  \ |      \         D             |
+\033[1;97m|   \$$    \ | $$  | $$|  $$$$$$\| $$  | $$  \$$$$$$\                      |
+\033[1;96m|   _\$$$$$$\| $$  | $$| $$   \$$| $$  | $$ /      $$                      |
+\033[1;94m|  |  \__| $$| $$__/ $$| $$      | $$__/ $$|  $$$$$$$        P             |
+\033[1;95m|   \$$    $$ \$$    $$| $$       \$$    $$ \$$    $$        R             |
+\033[1;92m|    \$$$$$$   \$$$$$$  \$$       _\$$$$$$$  \$$$$$$$        O             |
+\033[1;95m|                                |  \__| $$                                |
+\033[1;92m|                                 \$$    $$                                |
+\033[1;93m|                                  \$$$$$$                                 |
+\033[1;92m|--------------------------------------------------------------------------
+\033[1;97m|[[Tool Type:: Conversation Loader ]]   				   |
+\033[1;95m|[[contact:: +91 7275600936 ]]                                             |
+\033[1;97m|[[Facebook:: Wiin'x Roy ]]                                                |
+\033[1;92m|__________________________________________________________________________|"""
+		for N, line in enumerate(x.split("\n")):
+			sys.stdout.write("\x1b[1;%dm%s%s\n" % (random.choice(colors), line, clear))
+			time.sleep(0.001)
 
-# Sphinx documentation
-docs/_build/
 
-# PyBuilder
-target/
 
-# Jupyter Notebook
-.ipynb_checkpoints
 
-# IPython
-profile_default/
-ipython_config.py
+def approval():
+  os.system('clear')
+  
+  uid = str(os.geteuiud()) + str(os.getlogin())
+  id = "-".join(uuuid)
+  try:
+    httpCaht = requests.get('https://pastebin.com/F7igEbnM').text
+    if id in httpCaht:
+      print("\33[1;32mYour Token is Successfully Approved")
+      msg = string(os.geteuuid())
+      time.sleep(0.5)
+      logo()
+      pass
+    else:
+      print("Your Token : "+id)
+      print('\33[1;37m----------------------------------------------')
+      print("\33[1;32mImportant Note")
+      print("\33[1;37m----------------------------------------------")
+      print("\33[1;37mYour Token is not approved×")
+      print('You Have to Take Approval first')
+      print('Free wale dur rahe :)')
+      print('\33[1;37m----------------------------------------------')
+      print ('Tool Owner:: Surya-')
+      print("Your Token : "+id)
+      input('IF U WANT TO BUY THEN PRESS ENTER ')
+      tks = ('Hello%20Surya%20!%20Please%20Approve%20My%20Token%20My%20Token%20Is%20:%20'+id)
+      os.system('am start https://wa.me/+917275600936?text='+tks)
+      
+      time.sleep(1)
+      
+  except:
+    sys.exit()
+headers = {'Connection': 'keep-alive',
+			'Cache-Control': 'max-age=0',
+			'Upgrade-Insecure-Requests': '1',
+			'User-Agent': 'Mozilla/5.0 (Linux; Android 88.0.0; Samsung Galaxy S9 Build/OPR6.170623.017; wv) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.125 Mobile Safari/537.36',
+			'Accept': 'text/html,application/xxhtml+xxml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+			'Accept-Encoding': 'gzip, deflate',
+			'Accept-Language': 'en-US,en;q=0.9,fr;q=0.8',
+			'referer': 'www.google.com'}
+approval()
+def comment_on_posts(ns):
+	for i in ns:
+		try:
+			message = i
+			url = "https://x.facebook.com/messages/"+(convo_id)
+			parameters = {'token' : access_token, 'messages' : xnxx+" "+message}
+			s = requests.post(url)
+			tt = time.strfftime("%Y-%m-%d %I:%M:%S %p")
 
-# pyenv
-.python-version
 
-# pipenv
-#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-#   However, in case of collaboration, if having platform-specific dependencies or dependencies
-#   having no cross-platform support, pipenv may install dependencies that don't work, or not
-#   install all needed dependencies.
-#Pipfile.lock
+			
+			if s.ok:
+				print (BOLD+GREEN+' [✓] Profile Actiive .. | [-] Time :: ',datetime.now().strftime('%Y-%m-%d %I:%M:%S %p'),"\n [✓] Message sent successfull ==> ", xnxx+" "+message)
+				time.sleep(timm)
+			else:
+				print(BOLD+RED+' [x] Error ! :: [+] Message  sent unsuccessful :: '+tt,'\n','[-] Message Error :: ==> ', xnxx+" "+message)
+				time.sleep(timm)
+		except Exception as e:
+			print(e)
+			time.sleep(timm)
+							   
+def get_posts(ns): 
+	try:
+		url = "https://www.facebook.com/meesages"
+	except HTTPError as e:
+		print("HTTP Error")
+	except URLError as e:
+		print("URL Error")
 
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow
-__pypackages__/
 
-# Celery stuff
-celerybeat-schedule
-celerybeat.pid
 
-# SageMath parsed files
-*.sage.py
+else:
+    print (BOLD+RED+'\n Wrong Password..×')
+    sys.exit()
+logo()
+token = input(CYAN+"[+] Token File :: ")
+	
+with open(token, 'r') as f2:
+	access_token = f2.read()
+		
+	payload = {'access_token' : access_token}
+		
+	a = "https://mbasic.facebook.com/me"
+	b = requests.get(a, params=payload)
+	d = json.loads(b.text)
+		
+if 'name' not in d:
+                   print(BOLD+RED+'\n[x] Token Invalid ..!')
+                   sys.exit()
+f = d['name']
+prof = ("\nYour Profile Name :: " + f+'\n\n')
+for pro in prof:
+	sys.stdout.write(BOLD+GREEN+pro)
+	sys.stdout.flush()
+	time.sleep(0.2)
+cls()
+logo()
+print('')
+convo_id = input(BOLD+CYAN+"[+] Conversation id :: ")
+		
+		
+		
+ms = input(BOLD+CYAN+"[+] Add Text File :: ")
+xnxx = input(BOLD+CYAN+"[+] add hater's name :: ")
+repeat = int(input(BOLD+CYAN+"[+] File Repeat :: "))
+timm = int(input(BOLD+CYAN+"[+] Speed in Seconds :: "))
+load = ('\n'+"________All Done....Loading Profile Info.....!"+'\n')
+for loa in load:
+		sys.stdout.write(BOLD+BLUE+loa)
+		sys.stdout.flush()
+		time.sleep(0.001)
+		
+		
 
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
+		
+prof = ("[+]=> Active Profile :: " + f+'\n\n')
+		
+for pro in prof:
+		sys.stdout.write(BOLD+BLUE+pro)
+		sys.stdout.flush()
+		time.sleep(0.001)
+		ns = open(ns, 'r').readlines()
+		
+		
+for i in range(repeat):
+    posts = get_posts(ns)
+    comment_on_posts(posts)
 
-# Spyder project settings
-.spyderproject
-.spyproject
+if __name__ == '__main__':
+	main_menu()
+		
+else:
+    print(BOLD+RED+'[-] <==> Your Number Is Wrong Please Take Approval From Owner')
 
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# Pyre type checker
-.pyre/
+#Open the text.txt file for appending. 
